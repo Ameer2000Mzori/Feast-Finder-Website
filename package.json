@@ -9,7 +9,7 @@
     "build": "your_build_script",
     "test": "your_test_script",
     "otherScript": "your_other_script"
-  }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
