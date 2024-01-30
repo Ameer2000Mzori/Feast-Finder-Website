@@ -1,3 +1,4 @@
+
 // selecting elements
 
 // gelobal variables
@@ -7,4 +8,6 @@
 // functions
 
 // events
+
+
 console.log('Hello World!')
