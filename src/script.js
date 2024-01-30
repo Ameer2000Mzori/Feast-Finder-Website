@@ -17,6 +17,7 @@ const getData = async (searchTerm) => {
     // console.log(data.data.recipes)
 
     // if there are no recipes, return no recipes found message else call showData function function
+    console.log(`our data is:`, data)
     data.data.recipes.length > 1
       ? showData(data.data.recipes)
       : console.log('No recipes found')
