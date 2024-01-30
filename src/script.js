@@ -28,8 +28,19 @@ const getData = async (searchTerm) => {
 // fter click on seach button the function will be called
 const getRecipes = (searchTerm) => {
   console.log('passed', searchInput.value)
-  searchTerm = searchInput.value
-  getData(searchTerm)
+
+  let seacrchTimer = 0
+
+  let seachInterval = setInterval(() => {
+    seacrchTimer += 1
+    console.log(seacrchTimer)
+
+    if (seacrchTimer > 4) {
+      searchTerm = searchInput.value
+      getData(searchTerm)
+      clearInterval(seachInterval)
+    }
+  }, 1000)
 }
 
 // show the data for the user to see
