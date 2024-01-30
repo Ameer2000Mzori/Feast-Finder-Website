@@ -15,6 +15,7 @@ const getData = async (searchTerm) => {
     )
     const data = await recipes.json()
     console.log(data.data.recipes)
+    showData(data.data.recipes)
   } catch (error) {
     console.log(error)
     return { error: 'Failed to fetch data' } // Return an error object if there's an issue
@@ -29,6 +30,16 @@ const getRecipes = (searchTerm) => {
   console.log('passed', searchInput.value)
   searchTerm = searchInput.value
   getData(searchTerm)
+}
+
+// show the data for the user to see
+// here we are gonna pass the dtata to the showData function
+const showData = (data) => {
+  data.forEach((element) => {
+    console.log('title', element.title)
+    console.log('publisher', element.publisher)
+    console.log('image_url', element.image_url)
+  })
 }
 // events
 
