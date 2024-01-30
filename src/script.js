@@ -4,14 +4,15 @@ const searchInput = document.getElementById('search-Input')
 
 // gelobal variables
 let searchTerm = `kebab`
-const API_URL = `https://forkify-api.herokuapp.com/api/v2/recipes?search=${searchTerm}&key=652fd856-9ae7-4c74-a0f1-c78e8de3a994`
 
 // fetch data functions
 
 // getting our data from the API
-const getData = async () => {
+const getData = async (searchTerm) => {
   try {
-    const recipes = await fetch(API_URL)
+    const recipes = await fetch(
+      `https://forkify-api.herokuapp.com/api/v2/recipes?search=${searchTerm}&key=652fd856-9ae7-4c74-a0f1-c78e8de3a994`
+    )
     const data = await recipes.json()
     console.log(data.data.recipes)
   } catch (error) {
@@ -24,15 +25,18 @@ const getData = async () => {
 // functions
 
 // fter click on seach button the function will be called
-const getRecipes = () => {
+const getRecipes = (searchTerm) => {
   console.log('passed', searchInput.value)
+  searchTerm = searchInput.value
+  getData(searchTerm)
 }
 // events
 
-getData()
 // console.log('Hello World!')
 searchBtn.addEventListener('click', () => {
   searchInput.value
     ? getRecipes(searchInput.value)
     : console.log('Please enter a search term')
 })
+
+getData(searchTerm)
