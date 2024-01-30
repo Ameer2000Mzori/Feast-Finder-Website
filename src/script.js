@@ -3,7 +3,7 @@ const searchBtn = document.getElementById('search-Btn')
 const searchInput = document.getElementById('search-Input')
 
 // gelobal variables
-let searchTerm = `kebab`
+let searchTerm = `pizza`
 
 // fetch data functions
 
@@ -14,10 +14,10 @@ const getData = async (searchTerm) => {
       `https://forkify-api.herokuapp.com/api/v2/recipes?search=${searchTerm}&key=652fd856-9ae7-4c74-a0f1-c78e8de3a994`
     )
     const data = await recipes.json()
-    console.log(data.data.recipes)
+    // console.log(data.data.recipes)
 
     // if there are no recipes, return no recipes found message else call showData function function
-    data.data.recipes > 1
+    data.data.recipes.length > 1
       ? showData(data.data.recipes)
       : console.log('No recipes found')
   } catch (error) {
@@ -35,16 +35,18 @@ const getData = async (searchTerm) => {
 const getRecipes = (searchTerm) => {
   console.log('passed', searchInput.value)
   let seacrchTimer = 0
+  //
   let seachInterval = setInterval(() => {
     seacrchTimer += 1
     console.log(seacrchTimer)
 
     if (seacrchTimer > 4) {
+      seacrchTimer = 0
       searchTerm = searchInput.value
       getData(searchTerm)
       clearInterval(seachInterval)
     }
-  }, 1000)
+  }, 500)
 }
 
 // show the data for the user to see
@@ -60,8 +62,9 @@ const showData = (data) => {
 
 // console.log('Hello World!')
 searchBtn.addEventListener('click', () => {
-  searchInput.value
-    ? getRecipes(searchInput.value)
+  searchTerm = searchInput.value
+  searchTerm
+    ? getRecipes(searchTerm)
     : console.log('Please enter a search term')
 })
 
