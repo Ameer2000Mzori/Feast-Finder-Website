@@ -15,12 +15,18 @@ const getData = async (searchTerm) => {
     )
     const data = await recipes.json()
     console.log(data.data.recipes)
-    showData(data.data.recipes)
+
+    // if there are no recipes, return no recipes found message else call showData function function
+    data.data.recipes > 1
+      ? showData(data.data.recipes)
+      : console.log('No recipes found')
   } catch (error) {
     console.log(error)
-    return { error: 'Failed to fetch data' } // Return an error object if there's an issue
+    // Return an error object if there's an issue
+    return { error: 'Failed to fetch data' }
   } finally {
     console.log('This is the finally block')
+    searchInput.value = ''
   }
 }
 // functions
@@ -28,9 +34,7 @@ const getData = async (searchTerm) => {
 // fter click on seach button the function will be called
 const getRecipes = (searchTerm) => {
   console.log('passed', searchInput.value)
-
   let seacrchTimer = 0
-
   let seachInterval = setInterval(() => {
     seacrchTimer += 1
     console.log(seacrchTimer)
