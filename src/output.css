@@ -584,8 +584,16 @@ video {
   height: 100vh;
 }
 
+.h-dvh {
+  height: 100dvh;
+}
+
 .w-screen {
   width: 100vw;
+}
+
+.w-dvw {
+  width: 100dvw;
 }
 
 .border-collapse {
@@ -633,10 +641,32 @@ video {
   vertical-align: baseline;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .underline {
   text-decoration-line: underline;
 }
 
 .outline {
   outline-style: solid;
+}
+
+@media (min-width: 640px) {
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .sm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
