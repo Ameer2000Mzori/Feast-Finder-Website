@@ -1,5 +1,6 @@
 // importing
 import { showCard } from './showCard.js'
+import { loadingAnimation } from './loadingAnimations.js'
 
 // using domcontent loaded event listener to wait untul the DOM is loaded
 export const selectedRecipe = () => {
