@@ -33,7 +33,10 @@
           <div class="Main-Top-Logo-Wrapper">
             <img class="sm:w-[150px]" src="./assets/download.png" alt="" />
           </div>
-          <div class="Main-Top-Search-Wrapper">
+          <div
+            id="Main-Top-Search-Wrapper"
+            class="flex flex-row justify-between gap-10 w-[50%]"
+          >
             <input
               id="search-Input"
               class="rounded-lg border-4 border-orange-100 focus:outline-orange-100 font-semibold pl-3"
@@ -46,11 +49,9 @@
             >
               <i class="fa-solid fa-magnifying-glass"></i> SEARCH
             </button>
-          </div>
-          <div class="Main-Top-BookMarks-Wrapper">
             <div
               id="book-Marks-Box"
-              class="sm:text-lg w-[190px] h-[40px] bg-orange-300 p-2 font-sans rounded-md text-white flex flex-col justify-center text-center items-center cursor-pointer"
+              class="flex felx-col w-[130px] h-[30px] bg-orange-300 hover:bg-orange-200 active:bg-orange-400 rounded-[1rem] text-white transition duration-100 text-center items-center justify-center cursor-pointer"
             >
               BOOK MARKS
             </div>
