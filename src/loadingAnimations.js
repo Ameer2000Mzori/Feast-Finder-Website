@@ -2,9 +2,6 @@
 const MainBottomLeftWrapper = document.getElementById(
   'Main-Bottom-Left-Wrapper'
 )
-const MainBottomRightWrapper = document.getElementById(
-  'Main-Bottom-Right-Wrapper'
-)
 
 // function
 export const loadingAnimation = (isLoading) => {
