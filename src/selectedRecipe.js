@@ -1,8 +1,13 @@
 // selecting elements
-const mealCards = document.querySelectorAll('#meal-Card')
-const selectedRecipe = () => {}
+const mealCards = document.querySelectorAll('meal-Card')
+const mainBottomLeftWrapper = document.getElementById(
+  'Main-Bottom-Left-Wrapper'
+)
 
-// event listeners
 mealCards.forEach((mealCard) => {
-  mealCard.addEventListener('click', selectedRecipe)
+  mealCard.addEventListener('click', () => {
+    console.log('clicked')
+    console.log(mealCards)
+  })
 })
+console.log(mealCards)

@@ -13,18 +13,10 @@ export const showData = (data) => {
     mealCard.id = 'meal-Card'
 
     // giving the dta to the card
-
     mealCard.innerHTML = `
-
-<h1 id="meal-Title-1" class="font-mono font-bold text-slate-900">
-  ${element.title}
-</h1>
-<img
-  id="meal-Img-1"
-  class="w-[40px] h-[40px] rounded-full object-cover"
-  src="${element.image_url}"
-  alt=""
-/>`
+<h1 id="meal-Title-1" class="font-mono font-bold text-slate-900">${element.title} </h1>
+<img id="meal-Img-1" class="w-[40px] h-[40px] rounded-full object-cover" src="${element.image_url}" alt=""/>
+`
     mainBottomLeftWrapper.append(mealCard)
   })
 }
