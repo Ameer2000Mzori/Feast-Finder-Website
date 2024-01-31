@@ -1,9 +1,13 @@
 // import functions
 import { getData } from './getData.js'
+import { selectedRecipe } from './selectedRecipe.js'
+// importing elements
+const MainBottomLeftWrapper = document.getElementById(
+  'Main-Bottom-Left-Wrapper'
+)
 
 // fter click on seach button the function will be called
 export const getRecipes = (searchTerm) => {
-  console.log('passed', searchInput.value)
   let seacrchTimer = 0
   //
   let seachInterval = setInterval(() => {
@@ -12,6 +16,8 @@ export const getRecipes = (searchTerm) => {
 
     if (seacrchTimer > 4) {
       seacrchTimer = 0
+      selectedRecipe()
+      MainBottomLeftWrapper.innerHTML = ``
       getData(searchTerm)
       clearInterval(seachInterval)
     }
