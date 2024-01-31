@@ -3,7 +3,6 @@ import { getData } from './getData.js'
 
 // fter click on seach button the function will be called
 export const getRecipes = (searchTerm) => {
-  console.log('passed', searchInput.value)
   let seacrchTimer = 0
   //
   let seachInterval = setInterval(() => {
