@@ -12,8 +12,16 @@ export const loadingAnimation = (isLoading) => {
   if (isLoading) {
     console.log('is loading')
     MainBottomLeftWrapper.innerHTML = `
+      <img
+      class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+      src="./assets/loading.svg"
+      alt=""
+    />
+      `
+
+    MainBottomRightWrapper.innerHTML = `
     <img
-    class="absolute top-[35%] left-[35%]"
+    class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
     src="./assets/loading.svg"
     alt=""
   />
@@ -21,6 +29,7 @@ export const loadingAnimation = (isLoading) => {
   } else {
     console.log('is not loading')
     MainBottomLeftWrapper.innerHTML = ``
+    MainBottomRightWrapper.innerHTML = ''
   }
 }
 
