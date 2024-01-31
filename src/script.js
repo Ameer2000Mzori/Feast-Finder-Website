@@ -1,3 +1,6 @@
+// importing functions
+import { showData } from './showData.js'
+
 // selecting elements
 const searchBtn = document.getElementById('search-Btn')
 const searchInput = document.getElementById('search-Input')
@@ -52,13 +55,13 @@ const getRecipes = (searchTerm) => {
 
 // show the data for the user to see
 // here we are gonna pass the dtata to the showData function
-const showData = (data) => {
-  data.forEach((element) => {
-    console.log('title', element.title)
-    console.log('publisher', element.publisher)
-    console.log('image_url', element.image_url)
-  })
-}
+// const showData = (data) => {
+//   data.forEach((element) => {
+//     console.log('title', element.title)
+//     console.log('publisher', element.publisher)
+//     console.log('image_url', element.image_url)
+//   })
+// }
 // events
 
 // console.log('Hello World!')
