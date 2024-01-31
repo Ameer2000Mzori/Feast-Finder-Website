@@ -2,6 +2,8 @@
 const mainBottomLeftWrapper = document.getElementById(
   'Main-Bottom-Left-Wrapper'
 )
+
+// show data functions
 export const showData = (data) => {
   data.forEach((element) => {
     // creating element card
