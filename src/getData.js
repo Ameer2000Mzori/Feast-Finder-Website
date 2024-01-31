@@ -1,5 +1,6 @@
 // importing functions
 import { showData } from './showData.js'
+import { loadingAnimation } from './loadingAnimations.js'
 
 // selecting elements
 const searchInput = document.getElementById('search-Input')
@@ -15,6 +16,7 @@ export const getData = async (searchTerm) => {
 
     // if there are no recipes, return no recipes found message else call showData function function
     console.log(`our data is:`, data)
+    loadingAnimation(false)
     data.data.recipes.length > 1
       ? showData(data.data.recipes)
       : console.log('No recipes found')
