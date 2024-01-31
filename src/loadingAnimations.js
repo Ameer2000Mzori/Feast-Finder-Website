@@ -8,12 +8,19 @@ const MainBottomRightWrapper = document.getElementById(
 // console.log('this is loading animations file')
 
 // function
-const loadingAnimation = (isLoading) => {
+export const loadingAnimation = (isLoading) => {
   if (isLoading) {
     console.log('is loading')
-    MainBottomLeftWrapper.innerHTML = ''
+    MainBottomLeftWrapper.innerHTML = `
+    <img
+    class="absolute top-[35%] left-[35%]"
+    src="./assets/loading.svg"
+    alt=""
+  />
+    `
   } else {
     console.log('is not loading')
+    MainBottomLeftWrapper.innerHTML = ``
   }
 }
 

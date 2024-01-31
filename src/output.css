@@ -576,6 +576,30 @@ video {
   left: 0px;
 }
 
+.left-\[50\%\] {
+  left: 50%;
+}
+
+.top-\[50\%\] {
+  top: 50%;
+}
+
+.left-\[25\%\] {
+  left: 25%;
+}
+
+.top-\[25\%\] {
+  top: 25%;
+}
+
+.left-\[35\%\] {
+  left: 35%;
+}
+
+.top-\[35\%\] {
+  top: 35%;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
