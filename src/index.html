@@ -60,7 +60,7 @@
         >
           <div
             id="Main-Bottom-Left-Wrapper"
-            class="w-[30%] h-[100%] flex flex-col text-start items-center justify-start pt-4 overflow-x-hidden overflow-auto border-r-2 border-slate-300 mr-2"
+            class="w-[30%] h-[100%] flex flex-col text-start items-center justify-start pt-4 overflow-x-hidden overflow-auto border-r-2 border-slate-300"
           >
             <div
               id="meal-Card"
@@ -77,13 +77,20 @@
               />
             </div>
           </div>
-          <div id="Main-Bottom-Right-Wrapper" class="w-[70%] h-[100%]">
-            <div class="meal-View">
-              <div>
-                <img id="meal-Img-2" src="" alt="" />
+          <div id="Main-Bottom-Right-Wrapper" class="w-[70%] h-[100%] relative">
+            <div class="meal-View h-[100%] w-[100%] bg-orange-100 rounded-md">
+              <div class="w-[100%] h-[100%]">
+                <img
+                  id="meal-Img-2"
+                  class="w-[100%] h-[100%] object-cover"
+                  src="./assets/download.jpg"
+                  alt=""
+                />
               </div>
-              <div>
-                <h1 id="meal-Title-2"></h1>
+              <div
+                class="w-[100%] h-[40px] flex flex-row text-center justify-evenly items-center absolute left-0 bottom-[10px] bg-orange-300"
+              >
+                <h1 id="meal-Title-2">here is meal name</h1>
                 <button id="meal-Fvo-Btn">
                   <i class="fa-regular fa-bookmark"></i>
                 </button>
