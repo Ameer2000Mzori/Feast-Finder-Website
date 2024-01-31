@@ -1,6 +1,7 @@
 // importing functions
 import { showData } from './showData.js'
 import { loadingAnimation } from './loadingAnimations.js'
+import { thereIsNoRecipes } from './thereIsNoRecipes.js'
 
 // selecting elements
 const searchInput = document.getElementById('search-Input')
@@ -19,7 +20,7 @@ export const getData = async (searchTerm) => {
     loadingAnimation(false)
     data.data.recipes.length > 1
       ? showData(data.data.recipes)
-      : console.log('No recipes found')
+      : thereIsNoRecipes()
   } catch (error) {
     console.log(error)
     // Return an error object if there's an issue
