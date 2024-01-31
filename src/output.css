@@ -660,6 +660,14 @@ video {
   height: 60%;
 }
 
+.h-\[70px\] {
+  height: 70px;
+}
+
+.h-\[100px\] {
+  height: 100px;
+}
+
 .w-\[100\%\] {
   width: 100%;
 }
@@ -706,6 +714,10 @@ video {
 
 .w-\[40px\] {
   width: 40px;
+}
+
+.w-\[100px\] {
+  width: 100px;
 }
 
 .border-collapse {
@@ -920,6 +932,11 @@ video {
   background-color: rgb(234 88 12 / var(--tw-bg-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -989,6 +1006,30 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-\[2rem\] {
+  font-size: 2rem;
+}
+
+.text-\[5rem\] {
+  font-size: 5rem;
+}
+
+.text-\[4rem\] {
+  font-size: 4rem;
+}
+
+.text-\[1rem\] {
+  font-size: 1rem;
+}
+
+.text-\[1\.5rem\] {
+  font-size: 1.5rem;
+}
+
+.text-\[1\.2rem\] {
+  font-size: 1.2rem;
 }
 
 .font-bold {
@@ -1122,6 +1163,11 @@ video {
   background-color: rgb(254 215 170 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-slate-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
 .focus\:outline-orange-100:focus {
   outline-color: #ffedd5;
 }
@@ -1134,6 +1180,11 @@ video {
 .active\:bg-orange-300:active {
   --tw-bg-opacity: 1;
   background-color: rgb(253 186 116 / var(--tw-bg-opacity));
+}
+
+.active\:bg-slate-400:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 640px) {
