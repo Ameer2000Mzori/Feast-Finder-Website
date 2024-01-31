@@ -11,6 +11,7 @@ const MainBottomRightWrapper = document.getElementById(
 const loadingAnimation = (isLoading) => {
   if (isLoading) {
     console.log('is loading')
+    MainBottomLeftWrapper.innerHTML = ''
   } else {
     console.log('is not loading')
   }
