@@ -2,6 +2,8 @@
 import { showData } from './showData.js'
 import { recipiesData } from './saveRecipesLogic.js'
 import { loadingAnimation } from './loadingAnimations.js'
+import { thereIsNoRecipes } from './thereIsNoRecipes.js'
+
 // import { showCard } from './showCard.js'
 
 // selecting elements
@@ -21,17 +23,23 @@ let bookMarksShown = false
 const showFavoRecpices = () => {
   loadingAnimation(true)
 
-  recipiesData ? selectRecipce() : console.log('no recipies data')
+  recipiesData ? showAndSelectRecipe() : thereIsNoRecipes()
 }
 
 // here is our selecte recipe function
 
-const selectRecipce = () => {
+const showAndSelectRecipe = () => {
   console.log('we are in function selectRecipe:', recipiesData)
-  MainBottomRightWrapper.innerHTML = ``
-
+  MainBottomRightWrapper.innerHTML = ''
   MainBottomLeftWrapper.innerHTML = ''
+
+  getFavoRecipesAndSelecte()
+  showFavoRecpicesRow()
 }
+
+// get favo recpices and selecte recipe
+
+// show favo recipices row
 
 // event listeners
 bookMarksBox.addEventListener('click', () => {
