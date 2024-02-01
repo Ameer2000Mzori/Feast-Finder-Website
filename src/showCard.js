@@ -56,4 +56,11 @@ export const showCard = (card) => {
   showedMealRightCard.append(div1)
   showedMealRightCard.append(div2)
   MainBottomRightWrapper.append(showedMealRightCard)
+
+  // favo btn event listener
+  button.addEventListener('click', () => {
+    console.log('button clicked')
+    console.log('this is title', h1.textContent)
+    console.log('this is img', img.src)
+  })
 }
