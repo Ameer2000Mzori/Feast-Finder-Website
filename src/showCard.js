@@ -1,11 +1,11 @@
 // importing
-import { saveRecipe, savedRecipes } from './saveRecipesLogic.js'
+import { saveRecipe, recipiesData } from './saveRecipesLogic.js'
 
 // selecting elements
 const MainBottomRightWrapper = document.getElementById(
   'Main-Bottom-Right-Wrapper'
 )
-export const showCard = (card) => {
+export let showCard = (card) => {
   let selectedCardName = card.firstElementChild.textContent.trim()
   console.log('selectedCardName:', selectedCardName)
 
@@ -13,7 +13,7 @@ export const showCard = (card) => {
   console.log('slectedCardImg:', selectedCardImg)
 
   const showedMealRightCard = document.createElement('div')
-  showedMealRightCard.class = `meal-View h-[100%] w-[100%] bg-orange-100 rounded-md" id="showed-Meal-Right-Card`
+  showedMealRightCard.className = `meal-View h-[100%] w-[100%] bg-orange-100 rounded-md" id="showed-Meal-Right-Card`
   showedMealRightCard.id = 'showed-Meal-Right-Card'
 
   const div1 = document.createElement('div')
@@ -51,12 +51,12 @@ export const showCard = (card) => {
 
   const icon = document.createElement('i')
 
-  savedRecipes.forEach((savedone) => {
+  recipiesData.forEach((savedone) => {
     console.log(savedone.title)
     console.log(savedone.image_url)
   })
 
-  let isFavoRecipt = savedRecipes.some((savedRecipeNames) => {
+  let isFavoRecipt = recipiesData.some((savedRecipeNames) => {
     return savedRecipeNames.title === selectedCardName
   })
 
@@ -76,17 +76,17 @@ export const showCard = (card) => {
     deleteRecipeBtn.addEventListener('click', () => {
       console.log('delete btn clicked')
       let selectedTitle = h1.textContent
-      let isThereRecipe = savedRecipes.find((recipes) => {
+      let isThereRecipe = recipiesData.find((recipes) => {
         return recipes.title === selectedTitle
       })
       if (isThereRecipe) {
         console.log('your recept is found', isThereRecipe)
-        console.log(' this is your selected title: ', selectedTitle)
-        console.log('this is your saved recipes: ', savedRecipes)
-        savedRecipes = savedRecipes.filter(
-          (recipe) => recipe.title !== selectedTitle
+        console.log('your recept is found title', isThereRecipe.title)
+        console.log('this is your saved recipes: ', recipiesData)
+        recipiesData = recipiesData.filter(
+          (recipe) => recipe.title !== isThereRecipe.title
         )
-        console.log('savedRecipes after delete item :', savedRecipes)
+        console.log('recipiesData after delete item :', recipiesData)
       }
     })
   } else {
@@ -111,7 +111,7 @@ export const showCard = (card) => {
     console.log('this is selected title', selectedTitle)
     console.log('this is selected img', selectedImg)
 
-    let isThereRecipe = savedRecipes.find((recipes) => {
+    let isThereRecipe = recipiesData.find((recipes) => {
       return recipes.title === selectedTitle
     })
 
@@ -124,7 +124,7 @@ export const showCard = (card) => {
       selectedTitle = ''
       selectedImg = ''
     } else {
-      console.log('this recipe is already in savedRecipes')
+      console.log('this recipe is already in recipiesData')
       selectedTitle = ''
       selectedImg = ''
     }

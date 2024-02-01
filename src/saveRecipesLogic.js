@@ -1,6 +1,6 @@
 // selecting elements
 
-export let savedRecipes = [
+export let recipiesData = [
   {
     title: 'Apple',
     image_url:
@@ -10,7 +10,7 @@ export let savedRecipes = [
 
 // functions
 export const saveRecipe = (selectedTitle, selectedImg) => {
-  let isThereRecipe = savedRecipes.some((recipes) => {
+  let isThereRecipe = recipiesData.some((recipes) => {
     return recipes.title === selectedTitle
   })
 
@@ -22,9 +22,9 @@ export const saveRecipe = (selectedTitle, selectedImg) => {
       image_url: selectedImg,
     }
 
-    savedRecipes.push(newRecipe)
+    recipiesData.push(newRecipe)
   } else {
-    console.log('this recipe is already in savedRecipes')
+    console.log('this recipe is already in recipiesData')
   }
-  console.log('savedRecipes:', savedRecipes)
+  console.log('recipiesData:', recipiesData)
 }

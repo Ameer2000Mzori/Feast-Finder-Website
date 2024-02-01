@@ -1,6 +1,6 @@
 // imoprting functions
 import { showData } from './showData.js'
-import { savedRecipes } from './saveRecipesLogic.js'
+import { recipiesData } from './saveRecipesLogic.js'
 import { selectedRecipe } from './selectedRecipe.js'
 import { loadingAnimation } from './loadingAnimations.js'
 
@@ -24,7 +24,7 @@ const showFavoRecpices = () => {
       clearInterval(showFavoRecpicesInterval)
       bookMarksShown = true
       MainBottomLeftWrapper.innerHTML = ''
-      showData(savedRecipes)
+      showData(recipiesData)
       selectedRecipe()
     } else {
       showFavoRecpicesCount++
