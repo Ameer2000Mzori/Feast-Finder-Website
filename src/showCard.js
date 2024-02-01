@@ -6,10 +6,10 @@ const MainBottomRightWrapper = document.getElementById(
   'Main-Bottom-Right-Wrapper'
 )
 export const showCard = (card) => {
-  const selectedCardName = card.firstElementChild.textContent
+  let selectedCardName = card.firstElementChild.textContent.trim()
   console.log('selectedCardName:', selectedCardName)
 
-  const selectedCardImg = card.lastElementChild.src
+  let selectedCardImg = card.lastElementChild.src
   console.log('slectedCardImg:', selectedCardImg)
 
   const showedMealRightCard = document.createElement('div')
@@ -51,6 +51,11 @@ export const showCard = (card) => {
 
   const icon = document.createElement('i')
 
+  savedRecipes.forEach((savedone) => {
+    console.log(savedone.title)
+    console.log(savedone.image_url)
+  })
+
   let isFavoRecipt = savedRecipes.some((savedRecipeNames) => {
     return savedRecipeNames.title === selectedCardName
   })
@@ -74,14 +79,29 @@ export const showCard = (card) => {
   // favo btn event listener
   button.addEventListener('click', () => {
     console.log('button clicked')
-    console.log('this is title', h1.textContent)
-    console.log('this is img', img.src)
+
     let selectedTitle = h1.textContent
     let selectedImg = img.src
-    saveRecipe(selectedTitle, selectedImg)
-    icon.className = icon.className.replace(
-      'fa-regular fa-bookmark',
-      'fa-solid fa-bookmark'
-    )
+
+    console.log('this is selected title', selectedTitle)
+    console.log('this is selected img', selectedImg)
+
+    let isThereRecipe = savedRecipes.find((recipes) => {
+      return recipes.title === selectedTitle
+    })
+
+    if (!isThereRecipe) {
+      saveRecipe(selectedTitle, selectedImg)
+      icon.className = icon.className.replace(
+        'fa-regular fa-bookmark',
+        'fa-solid fa-bookmark'
+      )
+      selectedTitle = ''
+      selectedImg = ''
+    } else {
+      console.log('this recipe is already in savedRecipes')
+      selectedTitle = ''
+      selectedImg = ''
+    }
   })
 }

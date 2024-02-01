@@ -15,7 +15,7 @@ export const saveRecipe = (selectedTitle, selectedImg) => {
   })
 
   if (!isThereRecipe) {
-    console.log('isThereRecipe? :', isThereRecipe)
+    console.log('is There Recipe? :', isThereRecipe)
     console.log('newly selected title and img : ', selectedTitle, selectedImg)
     savedRecipes.push({
       title: selectedTitle,
