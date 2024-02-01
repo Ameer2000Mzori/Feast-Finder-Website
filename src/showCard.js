@@ -64,31 +64,6 @@ export let showCard = (card) => {
 
   if (isFavoRecipt) {
     icon.className = 'fa-solid fa-bookmark text-[2rem]'
-    const deleteRecipeBtn = document.createElement('button')
-    deleteRecipeBtn.className =
-      'flex flex-col text-center justify-evenly items-center w-[75px] h-[75px] rounded-full bg-red-600 text-white'
-    const deleteIcon = document.createElement('i')
-    deleteIcon.className = ' fa-solid fa-trash text-[2rem]'
-    deleteRecipeBtn.appendChild(deleteIcon)
-    div2.appendChild(deleteRecipeBtn)
-
-    // delete btn when clicked  the selected recipe will be removed
-    deleteRecipeBtn.addEventListener('click', () => {
-      console.log('delete btn clicked')
-      let selectedTitle = h1.textContent
-      let isThereRecipe = recipiesData.find((recipes) => {
-        return recipes.title === selectedTitle
-      })
-      if (isThereRecipe) {
-        console.log('your recept is found', isThereRecipe)
-        console.log('your recept is found title', isThereRecipe.title)
-        console.log('this is your saved recipes: ', recipiesData)
-        recipiesData = recipiesData.filter(
-          (recipe) => recipe.title !== isThereRecipe.title
-        )
-        console.log('recipiesData after delete item :', recipiesData)
-      }
-    })
   } else {
     icon.className = 'fa-regular fa-bookmark text-[2rem]'
   }

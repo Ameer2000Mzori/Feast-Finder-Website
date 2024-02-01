@@ -36,3 +36,11 @@ bookMarksBox.addEventListener('click', () => {
   console.log('clicked')
   showFavoRecpices()
 })
+
+// const deleteRecipeBtn = document.createElement('button')
+//     deleteRecipeBtn.className =
+//       'flex flex-col text-center justify-evenly items-center w-[75px] h-[75px] rounded-full bg-red-600 text-white'
+//     const deleteIcon = document.createElement('i')
+//     deleteIcon.className = ' fa-solid fa-trash text-[2rem]'
+//     deleteRecipeBtn.appendChild(deleteIcon)
+//     div2.appendChild(deleteRecipeBtn)
