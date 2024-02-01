@@ -20,20 +20,19 @@ let bookMarksShown = false
 // this function shows favo recpices
 const showFavoRecpices = () => {
   loadingAnimation(true)
-  let showFavoRecpicesCount = 0
-  const showFavoRecpicesInterval = setInterval(() => {
-    if (showFavoRecpicesCount > 4) {
-      loadingAnimation(false)
-      clearInterval(showFavoRecpicesInterval)
-      bookMarksShown = true
-      MainBottomLeftWrapper.innerHTML = ''
-      showData(recipiesData)
-      console.log(recipiesData)
-    } else {
-      showFavoRecpicesCount++
-    }
-  }, 700)
+
+  recipiesData ? selectRecipce() : console.log('no recipies data')
 }
+
+// here is our selecte recipe function
+
+const selectRecipce = () => {
+  console.log('we are in function selectRecipe:', recipiesData)
+  MainBottomRightWrapper.innerHTML = ``
+
+  MainBottomLeftWrapper.innerHTML = ''
+}
+
 // event listeners
 bookMarksBox.addEventListener('click', () => {
   console.log('clicked')
@@ -91,3 +90,18 @@ bookMarksBox.addEventListener('click', () => {
 // showedMealRightCard.append(div1)
 // showedMealRightCard.append(div2)
 // MainBottomRightWrapper.append(showedMealRightCard)
+
+////////////////////// trashed //////////////////////
+// let showFavoRecpicesCount = 0
+// const showFavoRecpicesInterval = setInterval(() => {
+//   if (showFavoRecpicesCount > 4) {
+//     loadingAnimation(false)
+//     clearInterval(showFavoRecpicesInterval)
+//     bookMarksShown = true
+//     MainBottomLeftWrapper.innerHTML = ''
+//     showData(recipiesData)
+//     console.log(recipiesData)
+//   } else {
+//     showFavoRecpicesCount++
+//   }
+// }, 700)
