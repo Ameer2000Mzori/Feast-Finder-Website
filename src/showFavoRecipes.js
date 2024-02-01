@@ -134,6 +134,12 @@ const showFavoRecpicesRow = (recipiesData) => {
     mealCard.addEventListener('click', () => {
       console.log('this is title of clicked card ', selectedTitle)
       console.log('this is image of clicked card ', selectedImg)
+      let card = {
+        title: selectedTitle,
+        image_url: selectedImg,
+      }
+
+      getFavoRecipesAndSelecte(card)
       // getFavoRecipesAndSelecte(element)
     })
   })
