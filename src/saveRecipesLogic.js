@@ -1,6 +1,6 @@
 // selecting elements
 
-const savedRecipes = [
+export const savedRecipes = [
   {
     title: 'Apple',
     image_url:

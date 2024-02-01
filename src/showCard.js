@@ -1,5 +1,5 @@
 // importing
-import { saveRecipe } from './saveRecipesLogic.js'
+import { saveRecipe, savedRecipes } from './saveRecipesLogic.js'
 
 // selecting elements
 const MainBottomRightWrapper = document.getElementById(
@@ -50,7 +50,18 @@ export const showCard = (card) => {
     'w-[100px] h-[100px] rounded-full bg-white flex flex-col text-center items-center justify-center hover:bg-slate-200 active:bg-slate-400'
 
   const icon = document.createElement('i')
-  icon.className = 'fa-regular fa-bookmark text-[2rem]'
+
+  let isFavoRecipt = savedRecipes.some((savedRecipeNames) => {
+    return savedRecipeNames.title === selectedCardName
+  })
+
+  console.log(selectedCardName, 'is', isFavoRecipt)
+
+  if (isFavoRecipt) {
+    icon.className = 'fa-solid fa-bookmark text-[2rem]'
+  } else {
+    icon.className = 'fa-regular fa-bookmark text-[2rem]'
+  }
 
   button.appendChild(icon)
   div2.appendChild(button)
@@ -68,5 +79,9 @@ export const showCard = (card) => {
     let selectedTitle = h1.textContent
     let selectedImg = img.src
     saveRecipe(selectedTitle, selectedImg)
+    icon.className = icon.className.replace(
+      'fa-regular fa-bookmark',
+      'fa-solid fa-bookmark'
+    )
   })
 }
