@@ -664,6 +664,10 @@ video {
   height: 100vh;
 }
 
+.h-\[75px\] {
+  height: 75px;
+}
+
 .w-\[100\%\] {
   width: 100%;
 }
@@ -714,6 +718,14 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[75px\] {
+  width: 75px;
+}
+
+.w-\[50px\] {
+  width: 50px;
 }
 
 .border-collapse {
@@ -949,6 +961,11 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 
 .object-cover {

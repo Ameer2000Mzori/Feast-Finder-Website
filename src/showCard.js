@@ -47,7 +47,7 @@ export const showCard = (card) => {
   const button = document.createElement('button')
   button.id = 'meal-Fvo-Btn'
   button.className =
-    'w-[100px] h-[100px] rounded-full bg-white flex flex-col text-center items-center justify-center hover:bg-slate-200 active:bg-slate-400'
+    'w-[75px] h-[75px] rounded-full bg-white flex flex-col text-center items-center justify-center hover:bg-slate-200 active:bg-slate-400'
 
   const icon = document.createElement('i')
 
@@ -64,6 +64,14 @@ export const showCard = (card) => {
 
   if (isFavoRecipt) {
     icon.className = 'fa-solid fa-bookmark text-[2rem]'
+    const deleteRecipeBtn = document.createElement('button')
+    deleteRecipeBtn.className =
+      'flex flex-col text-center justify-evenly items-center w-[75px] h-[75px] rounded-full bg-red-600 text-white'
+    const deleteIcon = document.createElement('i')
+    deleteIcon.className = ' fa-solid fa-trash text-[2rem]'
+    deleteRecipeBtn.appendChild(deleteIcon)
+
+    div2.appendChild(deleteRecipeBtn)
   } else {
     icon.className = 'fa-regular fa-bookmark text-[2rem]'
   }
