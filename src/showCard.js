@@ -1,4 +1,7 @@
-// importing elements
+// importing
+import { saveRecipe } from './saveRecipesLogic.js'
+
+// selecting elements
 const MainBottomRightWrapper = document.getElementById(
   'Main-Bottom-Right-Wrapper'
 )
@@ -62,5 +65,8 @@ export const showCard = (card) => {
     console.log('button clicked')
     console.log('this is title', h1.textContent)
     console.log('this is img', img.src)
+    let selectedTitle = h1.textContent
+    let selectedImg = img.src
+    saveRecipe(selectedTitle, selectedImg)
   })
 }
