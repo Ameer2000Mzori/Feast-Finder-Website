@@ -88,6 +88,13 @@ const getFavoRecipesAndSelecte = (card) => {
   showedMealRightCard.append(div1)
   showedMealRightCard.append(div2)
   MainBottomRightWrapper.append(showedMealRightCard)
+
+  // delete button event listener
+  deleteRecipeBtn.addEventListener('click', () => {
+    console.log('delete button clicked')
+    let dishName = selectedCardName
+    console.log('dishName:', dishName)
+  })
 }
 // show favo recipices row
 const showFavoRecpicesRow = (recipiesData) => {
@@ -100,11 +107,35 @@ const showFavoRecpicesRow = (recipiesData) => {
     mealCard.id = 'meal-Card'
 
     // giving the dta to the card
-    mealCard.innerHTML = `
-<h1 id="meal-Title-1" class="font-mono font-bold text-slate-900">${element.title} </h1>
-<img id="meal-Img-1" class="w-[40px] h-[40px] rounded-full object-cover" src="${element.image_url}" alt=""/>
-`
+
+    let selectedTitle = element.title
+    let selectedImg = element.image_url
+
+    // Create an h1 element
+    var titleElement = document.createElement('h1')
+    titleElement.id = 'meal-Title-1'
+    titleElement.className = 'font-mono font-bold text-slate-900'
+    titleElement.textContent = selectedTitle
+
+    // Create an img element
+    var imgElement = document.createElement('img')
+    imgElement.id = 'meal-Img-1'
+    imgElement.className = 'w-[40px] h-[40px] rounded-full object-cover'
+    imgElement.src = selectedImg
+    imgElement.alt = ''
+
+    // Append the titleElement and imgElement to the mealCard
+    mealCard.appendChild(titleElement)
+    mealCard.appendChild(imgElement)
+
     MainBottomLeftWrapper.appendChild(mealCard)
+
+    // mail card click event listener
+    mealCard.addEventListener('click', () => {
+      console.log('this is title of clicked card ', selectedTitle)
+      console.log('this is image of clicked card ', selectedImg)
+      // getFavoRecipesAndSelecte(element)
+    })
   })
 }
 
