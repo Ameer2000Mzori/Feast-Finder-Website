@@ -70,8 +70,25 @@ export const showCard = (card) => {
     const deleteIcon = document.createElement('i')
     deleteIcon.className = ' fa-solid fa-trash text-[2rem]'
     deleteRecipeBtn.appendChild(deleteIcon)
-
     div2.appendChild(deleteRecipeBtn)
+
+    // delete btn when clicked  the selected recipe will be removed
+    deleteRecipeBtn.addEventListener('click', () => {
+      console.log('delete btn clicked')
+      let selectedTitle = h1.textContent
+      let isThereRecipe = savedRecipes.find((recipes) => {
+        return recipes.title === selectedTitle
+      })
+      if (isThereRecipe) {
+        console.log('your recept is found', isThereRecipe)
+        console.log(' this is your selected title: ', selectedTitle)
+        console.log('this is your saved recipes: ', savedRecipes)
+        savedRecipes = savedRecipes.filter(
+          (recipe) => recipe.title !== selectedTitle
+        )
+        console.log('savedRecipes after delete item :', savedRecipes)
+      }
+    })
   } else {
     icon.className = 'fa-regular fa-bookmark text-[2rem]'
   }

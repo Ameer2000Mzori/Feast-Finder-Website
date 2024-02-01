@@ -1,6 +1,6 @@
 // selecting elements
 
-export const savedRecipes = [
+export let savedRecipes = [
   {
     title: 'Apple',
     image_url:
@@ -17,10 +17,12 @@ export const saveRecipe = (selectedTitle, selectedImg) => {
   if (!isThereRecipe) {
     console.log('is There Recipe? :', isThereRecipe)
     console.log('newly selected title and img : ', selectedTitle, selectedImg)
-    savedRecipes.push({
+    let newRecipe = {
       title: selectedTitle,
       image_url: selectedImg,
-    })
+    }
+
+    savedRecipes.push(newRecipe)
   } else {
     console.log('this recipe is already in savedRecipes')
   }
