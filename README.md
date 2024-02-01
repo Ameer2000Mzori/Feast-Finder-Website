@@ -47,7 +47,6 @@
 - **[Responsive Website]**
 - **[Flex ]**
 - **[Tailwind ]**
-- **[TypeScript ]**
 - **[Api ]**
 - **[Prettier ]**
 - **[Eslint ]**
