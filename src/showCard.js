@@ -6,10 +6,10 @@ const MainBottomRightWrapper = document.getElementById(
   'Main-Bottom-Right-Wrapper'
 )
 export let showCard = (card) => {
-  let selectedCardName = card.firstElementChild.textContent.trim()
+  let selectedCardName = card.title
   console.log('selectedCardName:', selectedCardName)
 
-  let selectedCardImg = card.lastElementChild.src
+  let selectedCardImg = card.image_url
   console.log('slectedCardImg:', selectedCardImg)
 
   const showedMealRightCard = document.createElement('div')

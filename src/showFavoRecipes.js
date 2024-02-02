@@ -94,6 +94,22 @@ const getFavoRecipesAndSelecte = (card) => {
     console.log('delete button clicked')
     let dishName = selectedCardName
     console.log('dishName:', dishName)
+    let foundRecipe = recipiesData.some((recipes) => {
+      return recipes.title !== dishName.value
+    })
+
+    console.log('foundRecipe?:', foundRecipe)
+    if (foundRecipe) {
+      recipiesData = recipiesData.filter((recipes) => {
+        return recipes.title !== dishName
+      })
+
+      console.log('recipiesData:', recipiesData)
+      showFavoRecpices()
+    } else {
+      console.log('this recipe is not in recipiesData')
+    }
+    console.log('recipiesData:', recipiesData)
   })
 }
 // show favo recipices row
