@@ -1,19 +1,19 @@
 // importing
-import { saveRecipe, savedRecipes } from './saveRecipesLogic.js'
+import { saveRecipe, recipiesData } from './saveRecipesLogic.js'
 
 // selecting elements
 const MainBottomRightWrapper = document.getElementById(
   'Main-Bottom-Right-Wrapper'
 )
-export const showCard = (card) => {
-  const selectedCardName = card.firstElementChild.textContent
+export let showCard = (card) => {
+  let selectedCardName = card.title
   console.log('selectedCardName:', selectedCardName)
 
-  const selectedCardImg = card.lastElementChild.src
+  let selectedCardImg = card.image_url
   console.log('slectedCardImg:', selectedCardImg)
 
   const showedMealRightCard = document.createElement('div')
-  showedMealRightCard.class = `meal-View h-[100%] w-[100%] bg-orange-100 rounded-md" id="showed-Meal-Right-Card`
+  showedMealRightCard.className = `meal-View h-[100%] w-[100%] bg-orange-100 rounded-md" id="showed-Meal-Right-Card`
   showedMealRightCard.id = 'showed-Meal-Right-Card'
 
   const div1 = document.createElement('div')
@@ -47,11 +47,16 @@ export const showCard = (card) => {
   const button = document.createElement('button')
   button.id = 'meal-Fvo-Btn'
   button.className =
-    'w-[100px] h-[100px] rounded-full bg-white flex flex-col text-center items-center justify-center hover:bg-slate-200 active:bg-slate-400'
+    'w-[75px] h-[75px] rounded-full bg-white flex flex-col text-center items-center justify-center hover:bg-slate-200 active:bg-slate-400'
 
   const icon = document.createElement('i')
 
-  let isFavoRecipt = savedRecipes.some((savedRecipeNames) => {
+  recipiesData.forEach((savedone) => {
+    console.log(savedone.title)
+    console.log(savedone.image_url)
+  })
+
+  let isFavoRecipt = recipiesData.some((savedRecipeNames) => {
     return savedRecipeNames.title === selectedCardName
   })
 
@@ -74,14 +79,29 @@ export const showCard = (card) => {
   // favo btn event listener
   button.addEventListener('click', () => {
     console.log('button clicked')
-    console.log('this is title', h1.textContent)
-    console.log('this is img', img.src)
+
     let selectedTitle = h1.textContent
     let selectedImg = img.src
-    saveRecipe(selectedTitle, selectedImg)
-    icon.className = icon.className.replace(
-      'fa-regular fa-bookmark',
-      'fa-solid fa-bookmark'
-    )
+
+    console.log('this is selected title', selectedTitle)
+    console.log('this is selected img', selectedImg)
+
+    let isThereRecipe = recipiesData.find((recipes) => {
+      return recipes.title === selectedTitle
+    })
+
+    if (!isThereRecipe) {
+      saveRecipe(selectedTitle, selectedImg)
+      icon.className = icon.className.replace(
+        'fa-regular fa-bookmark',
+        'fa-solid fa-bookmark'
+      )
+      selectedTitle = ''
+      selectedImg = ''
+    } else {
+      console.log('this recipe is already in recipiesData')
+      selectedTitle = ''
+      selectedImg = ''
+    }
   })
 }
