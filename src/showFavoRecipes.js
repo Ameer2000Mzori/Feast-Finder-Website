@@ -94,15 +94,13 @@ const getFavoRecipesAndSelecte = (card) => {
     console.log('delete button clicked')
     let dishName = selectedCardName
     console.log('dishName:', dishName)
-    let foundRecipe = recipiesData.some((recipes) => {
-      return recipes.title !== dishName.value
-    })
+    let foundRecipeIndex = recipiesData.findIndex(
+      (recipe) => recipe.title === dishName
+    )
 
-    console.log('foundRecipe?:', foundRecipe)
-    if (foundRecipe) {
-      recipiesData = recipiesData.filter((recipes) => {
-        return recipes.title !== dishName
-      })
+    console.log('foundRecipeIndex:', foundRecipeIndex)
+    if (foundRecipeIndex !== -1) {
+      recipiesData.splice(foundRecipeIndex, 1)
 
       console.log('recipiesData:', recipiesData)
       showFavoRecpices()
@@ -128,13 +126,13 @@ const showFavoRecpicesRow = (recipiesData) => {
     let selectedImg = element.image_url
 
     // Create an h1 element
-    var titleElement = document.createElement('h1')
+    let titleElement = document.createElement('h1')
     titleElement.id = 'meal-Title-1'
     titleElement.className = 'font-mono font-bold text-slate-900'
     titleElement.textContent = selectedTitle
 
     // Create an img element
-    var imgElement = document.createElement('img')
+    let imgElement = document.createElement('img')
     imgElement.id = 'meal-Img-1'
     imgElement.className = 'w-[40px] h-[40px] rounded-full object-cover'
     imgElement.src = selectedImg
