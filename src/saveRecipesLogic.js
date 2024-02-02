@@ -3,12 +3,6 @@ import { showNotification } from './notifications.js'
 // get data from local storage if there is any data
 export let recipiesData = JSON.parse(localStorage.getItem('recipiesData')) || []
 
-// {
-//   title: 'Apple',
-//   image_url:
-//     'https://cdn.pixabay.com/photo/2017/04/28/17/00/apple-1500000_960_720.jpg',
-// },
-
 // functions
 export const saveRecipe = (selectedTitle, selectedImg) => {
   let isThereRecipe = recipiesData.some((recipes) => {
