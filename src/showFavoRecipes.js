@@ -164,18 +164,3 @@ bookMarksBox.addEventListener('click', () => {
   console.log('clicked')
   showFavoRecpices()
 })
-
-////////////////////// trashed //////////////////////
-// let showFavoRecpicesCount = 0
-// const showFavoRecpicesInterval = setInterval(() => {
-//   if (showFavoRecpicesCount > 4) {
-//     loadingAnimation(false)
-//     clearInterval(showFavoRecpicesInterval)
-//     bookMarksShown = true
-//     MainBottomLeftWrapper.innerHTML = ''
-//     showData(recipiesData)
-//     console.log(recipiesData)
-//   } else {
-//     showFavoRecpicesCount++
-//   }
-// }, 700)
