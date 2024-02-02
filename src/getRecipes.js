@@ -1,5 +1,6 @@
 // import functions
 import { getData } from './getData.js'
+import { showNotification } from './notifications.js'
 // importing elements
 const MainBottomLeftWrapper = document.getElementById(
   'Main-Bottom-Left-Wrapper'
@@ -15,6 +16,7 @@ export const getRecipes = (searchTerm) => {
 
     if (seacrchTimer > 4) {
       seacrchTimer = 0
+      showNotification(4)
       MainBottomLeftWrapper.innerHTML = ``
       getData(searchTerm)
       clearInterval(seachInterval)

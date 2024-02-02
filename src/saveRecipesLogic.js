@@ -1,5 +1,5 @@
-// selecting elements
-
+// importing
+import { showNotification } from './notifications.js'
 // get data from local storage if there is any data
 export let recipiesData = JSON.parse(localStorage.getItem('recipiesData')) || []
 
@@ -16,6 +16,7 @@ export const saveRecipe = (selectedTitle, selectedImg) => {
   })
 
   if (!isThereRecipe) {
+    showNotification(2)
     console.log('is There Recipe? :', isThereRecipe)
     console.log('newly selected title and img : ', selectedTitle, selectedImg)
     let newRecipe = {
@@ -26,6 +27,7 @@ export const saveRecipe = (selectedTitle, selectedImg) => {
     recipiesData.push(newRecipe)
     localStorage.setItem('recipiesData', JSON.stringify(recipiesData))
   } else {
+    showNotification(3)
     console.log('this recipe is already in recipiesData')
   }
   console.log('recipiesData:', recipiesData)
