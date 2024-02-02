@@ -1,12 +1,13 @@
 // selecting elements
 
-export let recipiesData = [
-  {
-    title: 'Apple',
-    image_url:
-      'https://cdn.pixabay.com/photo/2017/04/28/17/00/apple-1500000_960_720.jpg',
-  },
-]
+// get data from local storage if there is any data
+export let recipiesData = JSON.parse(localStorage.getItem('recipiesData')) || []
+
+// {
+//   title: 'Apple',
+//   image_url:
+//     'https://cdn.pixabay.com/photo/2017/04/28/17/00/apple-1500000_960_720.jpg',
+// },
 
 // functions
 export const saveRecipe = (selectedTitle, selectedImg) => {
@@ -23,6 +24,7 @@ export const saveRecipe = (selectedTitle, selectedImg) => {
     }
 
     recipiesData.push(newRecipe)
+    localStorage.setItem('recipiesData', JSON.stringify(recipiesData))
   } else {
     console.log('this recipe is already in recipiesData')
   }

@@ -1,5 +1,4 @@
 // imoprting functions
-import { showData } from './showData.js'
 import { recipiesData } from './saveRecipesLogic.js'
 import { loadingAnimation } from './loadingAnimations.js'
 import { thereIsNoRecipes } from './thereIsNoRecipes.js'
@@ -101,7 +100,7 @@ const getFavoRecipesAndSelecte = (card) => {
     console.log('foundRecipeIndex:', foundRecipeIndex)
     if (foundRecipeIndex !== -1) {
       recipiesData.splice(foundRecipeIndex, 1)
-
+      localStorage.setItem('recipiesData', JSON.stringify(recipiesData))
       console.log('recipiesData:', recipiesData)
       showFavoRecpices()
     } else {
