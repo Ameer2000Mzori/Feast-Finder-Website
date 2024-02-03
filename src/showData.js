@@ -20,7 +20,8 @@ export const showData = (data) => {
     // Create an h1 element
     let titleElement = document.createElement('h1')
     titleElement.id = 'meal-Title-1'
-    titleElement.className = 'font-mono font-bold text-slate-900'
+    titleElement.className =
+      'font-mono font-bold text-slate-900 sm:text-[0.6rem] md:text-[0.9rem] lg:text-[1.2rem] text-start'
     titleElement.textContent = selectedTitle
 
     // Create an img element
