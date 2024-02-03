@@ -18,7 +18,7 @@
 
 # 📖 About This Project <a name="about-project"></a>
 
-> Feast Finder Website, Build with HTML, SCSS, and JavaScript, uses linters for clean code. Explore restaurants, add favorites, and remove seamlessly. Specify people for a customized experience; detailed restaurant info available. Check the live demo for hands-on exploration.
+> Feast Finder Website is a website created with HTML, JavaScript, and Tailwind to style the elements. It utilizes an API for obtaining restaurant information and data. Please don't forget to check out the live demo.
 
 # Sample Of Website <a name="Sample-Of-Website"></a>
 
@@ -33,11 +33,10 @@
   <summary>Client</summary>
   <ul>
   <li><a href="https://en.wikipedia.org/wiki/HTML">Html</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/CSS">Css</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Sass_(style_sheet_language)">Scss</a></li>
+  <li><a href="https://tailwindcss.com/">Tailwind</a></li>
   <li><a href="https://en.wikipedia.org/wiki/JavaScript">Javascript</a></li>
-  <li><a href="https://stylelint.io/">Html/CSS Linters</a></li>
-  <li><a href="https://eslint.org/">eslinters</a></li>
+  <li><a href="https://eslint.org/">Eslint</a></li>
+    <li><a href="https://prettier.io/">Prettier</a></li>
   </ul>
 </details>
 
@@ -46,10 +45,10 @@
 ### Key Features <a name="key-features"></a>
 
 - **[Responsive Website]**
-- **[Flex & Grid]**
-- **[SCSS ]**
-- **[TypeScript ]**
-- **[Linters ]**
+- **[Flex ]**
+- **[Tailwind ]**
+- **[Api ]**
+- **[Prettier ]**
 - **[Eslint ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

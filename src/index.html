@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feast Finder Website</title>
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="icon"
       href="https://static.vecteezy.com/system/resources/thumbnails/020/570/638/small_2x/coxinha-icon-design-free-vector.jpg"
@@ -16,10 +15,124 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="output.css" />
   </head>
-  <body>
-    <h1>start of project</h1>
-    <h2>This is the develop branch</h2>
-    <script src="script.js"></script>
+  <body class="overflow-hidden">
+    <div
+      id="notifications"
+      class="absolute top-4 opacity-0 right-4 w-[250px] h-[40px] bg-black transition-all duration-1000 text-center item-center justify-center flex flex-col rounded-lg translate-x-[200%]"
+    ></div>
+    <section
+      id="main-Page"
+      class="flex flex-col h-dvh w-dvw bg-orange-300 justify-center text-center items-center"
+    >
+      <div
+        id="main-Wrapper"
+        class="flex flex-col w-[90%] h-[90%] bg-slate-100 justify-start align-start text-start rounded-[1rem] shadow-gray-950 shadow-md"
+      >
+        <div
+          id="main-Top-Wrapper"
+          class="w-[100%] h-[10%] flex flex-row justify-evenly text-center items-center"
+        >
+          <div class="Main-Top-Logo-Wrapper">
+            <img class="sm:w-[150px]" src="./assets/download.png" alt="" />
+          </div>
+          <div
+            id="Main-Top-Search-Wrapper"
+            class="flex flex-row justify-between gap-10 w-[50%]"
+          >
+            <input
+              id="search-Input"
+              class="rounded-lg border-4 border-orange-100 focus:outline-orange-100 font-semibold pl-3"
+              type="text"
+              placeholder="search your favo dishes"
+            />
+            <button
+              id="search-Btn"
+              class="w-[130px] h-[30px] bg-orange-300 hover:bg-orange-200 active:bg-orange-400 rounded-[1rem] text-white transition duration-100"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <div
+              id="book-Marks-Box"
+              class="flex felx-col w-[130px] h-[30px] bg-orange-300 hover:bg-orange-200 active:bg-orange-400 rounded-[1rem] text-white transition duration-100 text-center items-center justify-center cursor-pointer"
+            >
+              <p class="sm:text-[0.6rem] md:text-[0.9rem] lg:text-[1.2rem]">
+                BOOK MARKS
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          id="main-Bottom-Wrapper"
+          class="h-[90%] w-[100%] flex flex-row border-t-2 border-slate-300"
+        >
+          <div
+            id="Main-Bottom-Left-Wrapper"
+            class="w-[30%] h-[100%] flex flex-col text-start items-center justify-start pt-4 overflow-x-hidden overflow-auto border-r-2 border-slate-300 relative"
+          >
+            <!-- <div
+              id="meal-Card"
+              class="w-[95%] h-[60px] mt-2 mb-2 bg-orange-300 hover:bg-orange-200 active:bg-orange-300 cursor-pointer rounded-lg flex flex-row text-center items-center justify-between pl-2 pr-5 p-4"
+            >
+              <h1 id="meal-Title-1" class="font-mono font-bold text-slate-900">
+                here is meal name
+              </h1>
+              <img
+                id="meal-Img-1"
+                class="w-[40px] h-[40px] rounded-full object-cover"
+                src="./assets/download.jpg"
+                alt=""
+              />
+            </div> -->
+          </div>
+          <div
+            id="Main-Bottom-Right-Wrapper"
+            class="w-[70%] h-[100%] relative overflow-y-hidden overflow-x-hidden"
+          >
+            <div
+              class="meal-View h-[100%] w-[100%] bg-orange-100 rounded-md"
+              id="showed-Meal-Right-Card"
+            >
+              <div class="sm:hidden md:hidden w-full h-full">
+                <img
+                  id="meal-Img-2"
+                  class="hidden sm:block md:block w-full h-full object-cover rounded-xl sm:h-40px md:h-60px lg:h-70px"
+                  src="./assets/download.jpg"
+                  alt=""
+                />
+              </div>
+
+              <div
+                class="w-[100%] h-[70px] flex flex-row text-center justify-evenly items-center absolute left-0 bottom-[10px] bg-orange-200"
+              >
+                <div
+                  class="w-[300px] h-[50px] rounded-lg bg-slate-100 flex felx-col text-center items-center justify-center"
+                >
+                  <h1 id="meal-Title-2" class="text-[1.6rem] text-slate-900">
+                    here is meal name
+                  </h1>
+                </div>
+                <button
+                  id="meal-Fvo-Btn"
+                  class="w-[100px] h-[100px] rounded-full bg-white flex felx-col text-center items-center justify-center hover:bg-slate-200 active:bg-slate-400"
+                >
+                  <i class="fa-regular fa-bookmark text-[2rem]"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="saveRecipesLogic.js" defer></script>
+    <script type="module" src="getRecipes.js" defer></script>
+    <script type="module" src="getRecipesHandler.js" defer></script>
+    <script type="module" src="getData.js" defer></script>
+    <script type="module" src="showData.js" defer></script>
+    <script type="module" src="showFavoRecipes.js"></script>
+    <script type="module" src="showCard.js"></script>
+    <script type="module" src="loadingAnimations.js"></script>
+    <script type="module" src="notifications.js"></script>
   </body>
 </html>
