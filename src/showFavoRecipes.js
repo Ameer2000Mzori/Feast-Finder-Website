@@ -70,7 +70,8 @@ const getFavoRecipesAndSelecte = (card) => {
 
   const h1 = document.createElement('h1')
   h1.id = 'meal-Title-2'
-  h1.className = 'text-[1.6rem] text-slate-900'
+  h1.className =
+    'text-[0.6rem] text-slate-900  sm:text-[0.9rem] font-bold md:text-[1.2rem] font-mono lg:text-[1.6rem] text-center'
   h1.textContent = selectedCardName
 
   // our newly made delete button
