@@ -1289,16 +1289,40 @@ video {
   .sm\:text-\[0\.9rem\] {
     font-size: 0.9rem;
   }
+
+  .sm\:text-\[0\.6rem\] {
+    font-size: 0.6rem;
+  }
 }
 
 @media (min-width: 768px) {
   .md\:text-\[1\.2rem\] {
     font-size: 1.2rem;
   }
+
+  .md\:text-\[1\.6rem\] {
+    font-size: 1.6rem;
+  }
+
+  .md\:text-\[1\.1rem\] {
+    font-size: 1.1rem;
+  }
+
+  .md\:text-\[1rem\] {
+    font-size: 1rem;
+  }
+
+  .md\:text-\[0\.9rem\] {
+    font-size: 0.9rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .lg\:text-\[1\.6rem\] {
     font-size: 1.6rem;
+  }
+
+  .lg\:text-\[1\.2rem\] {
+    font-size: 1.2rem;
   }
 }
