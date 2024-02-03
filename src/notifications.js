@@ -55,4 +55,5 @@ const removeNotifications = () => {
   notificationsEl.style.opacity = ''
   notificationsEl.style.transform = ''
 }
-showNotification(0)
+// this is for testing and debugging
+// showNotification(0)

@@ -1,5 +1,6 @@
 // importing
 import { showNotification } from './notifications.js'
+
 // get data from local storage if there is any data
 export let recipiesData = JSON.parse(localStorage.getItem('recipiesData')) || []
 
@@ -17,7 +18,6 @@ export const saveRecipe = (selectedTitle, selectedImg) => {
       title: selectedTitle,
       image_url: selectedImg,
     }
-
     recipiesData.push(newRecipe)
     localStorage.setItem('recipiesData', JSON.stringify(recipiesData))
   } else {

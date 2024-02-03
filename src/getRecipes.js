@@ -9,6 +9,7 @@ const MainBottomLeftWrapper = document.getElementById(
 // fter click on seach button the function will be called
 export const getRecipes = (searchTerm) => {
   let seacrchTimer = 0
+  showNotification(2)
   //
   let seachInterval = setInterval(() => {
     seacrchTimer += 1
@@ -16,7 +17,6 @@ export const getRecipes = (searchTerm) => {
 
     if (seacrchTimer > 4) {
       seacrchTimer = 0
-      showNotification(2)
       MainBottomLeftWrapper.innerHTML = ``
       getData(searchTerm)
       clearInterval(seachInterval)
