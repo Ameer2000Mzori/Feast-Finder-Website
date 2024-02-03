@@ -33,7 +33,18 @@ export const showNotification = (stageNotification) => {
   notificationsEl.style.color = 'white'
   notificationsEl.style.opacity = '100'
   notificationsEl.style.transform = 'translateY(0%)'
-  // removeNotifications()
+
+  let notificationCount = 0
+  let nitificationInterval = setInterval(() => {
+    if (notificationCount > 4) {
+      clearInterval(nitificationInterval)
+      console.log('notificationCount:', notificationCount)
+      removeNotifications()
+    } else {
+      notificationCount++
+      console.log('notificationCount:', notificationCount)
+    }
+  }, 300)
 }
 
 //remove notification function
