@@ -100,7 +100,7 @@ const getFavoRecipesAndSelecte = (card) => {
 
     console.log('foundRecipeIndex:', foundRecipeIndex)
     if (foundRecipeIndex !== -1) {
-      showNotification(1)
+      showNotification(0)
       recipiesData.splice(foundRecipeIndex, 1)
       localStorage.setItem('recipiesData', JSON.stringify(recipiesData))
       console.log('recipiesData:', recipiesData)

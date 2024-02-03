@@ -1,33 +1,47 @@
 // selecting elements
 const notificationsEl = document.getElementById('notifications')
+
+// notifications arry of objects data
+const notificationsArrData = [
+  {
+    id: 1,
+    text: 'deleted successfully',
+    color: 'red',
+  },
+  {
+    id: 2,
+    text: 'item added to favorite list',
+    color: 'green',
+  },
+  {
+    id: 3,
+    text: 'item is already in favorite list',
+    color: 'yellow',
+  },
+  {
+    id: 4,
+    text: 'searching for item',
+    color: 'blue',
+  },
+]
+
+// notification function
 export const showNotification = (stageNotification) => {
-  if (stageNotification === 1) {
-    notificationsEl.textContent = 'deleted successfully'
-    notificationsEl.style.backgroundColor = 'green'
-    notificationsEl.style.color = 'white'
-    notificationsEl.style.opacity = '100'
-    notificationsEl.style.transform = 'translateY(0%)'
-  } else if (stageNotification === 2) {
-    console.warn('item added to favorite list')
-    notificationsEl.textContent = 'item added to favorite list'
-    notificationsEl.style.backgroundColor = 'green'
-    notificationsEl.style.color = 'white'
-    notificationsEl.style.opacity = '100'
-    notificationsEl.style.transform = 'translateY(0%)'
-  } else if (stageNotification === 3) {
-    console.warn('item is already in favorite list')
-    notificationsEl.textContent = 'item is already in favorite list'
-    notificationsEl.style.backgroundColor = 'green'
-    notificationsEl.style.color = 'white'
-    notificationsEl.style.opacity = '100'
-    notificationsEl.style.transform = 'translateY(0%)'
-  } else if (stageNotification === 4) {
-    console.warn('searching for item')
-    notificationsEl.textContent = 'searching for item'
-    notificationsEl.style.backgroundColor = 'green'
-    notificationsEl.style.color = 'white'
-    notificationsEl.style.opacity = '100'
-    notificationsEl.style.transform = 'translateY(0%)'
-  }
+  notificationsEl.textContent = notificationsArrData[stageNotification].text
+  notificationsEl.style.backgroundColor =
+    notificationsArrData[stageNotification].color
+  notificationsEl.style.color = 'white'
+  notificationsEl.style.opacity = '100'
+  notificationsEl.style.transform = 'translateY(0%)'
+  // removeNotifications()
 }
-showNotification(1)
+
+//remove notification function
+const removeNotifications = () => {
+  notificationsEl.textContent = ''
+  notificationsEl.style.backgroundColor = ''
+  notificationsEl.style.color = ''
+  notificationsEl.style.opacity = ''
+  notificationsEl.style.transform = ''
+}
+showNotification(0)

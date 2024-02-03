@@ -10,7 +10,7 @@ export const saveRecipe = (selectedTitle, selectedImg) => {
   })
 
   if (!isThereRecipe) {
-    showNotification(2)
+    showNotification(1)
     console.log('is There Recipe? :', isThereRecipe)
     console.log('newly selected title and img : ', selectedTitle, selectedImg)
     let newRecipe = {
@@ -21,7 +21,7 @@ export const saveRecipe = (selectedTitle, selectedImg) => {
     recipiesData.push(newRecipe)
     localStorage.setItem('recipiesData', JSON.stringify(recipiesData))
   } else {
-    showNotification(3)
+    showNotification(2)
     console.log('this recipe is already in recipiesData')
   }
   console.log('recipiesData:', recipiesData)

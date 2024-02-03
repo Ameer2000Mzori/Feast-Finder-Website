@@ -16,7 +16,7 @@ export const getRecipes = (searchTerm) => {
 
     if (seacrchTimer > 4) {
       seacrchTimer = 0
-      showNotification(4)
+      showNotification(2)
       MainBottomLeftWrapper.innerHTML = ``
       getData(searchTerm)
       clearInterval(seachInterval)
