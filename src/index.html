@@ -57,7 +57,9 @@
               id="book-Marks-Box"
               class="flex felx-col w-[130px] h-[30px] bg-orange-300 hover:bg-orange-200 active:bg-orange-400 rounded-[1rem] text-white transition duration-100 text-center items-center justify-center cursor-pointer"
             >
-              BOOK MARKS
+              <p class="sm:text-[0.6rem] md:text-[0.9rem] lg:text-[1.2rem]">
+                BOOK MARKS
+              </p>
             </div>
           </div>
         </div>
@@ -92,14 +94,15 @@
               class="meal-View h-[100%] w-[100%] bg-orange-100 rounded-md"
               id="showed-Meal-Right-Card"
             >
-              <div class="w-[100%] h-[100%]">
+              <div class="sm:hidden md:hidden w-full h-full">
                 <img
                   id="meal-Img-2"
-                  class="w-[100%] h-[100%] object-cover rounded-xl"
+                  class="hidden sm:block md:block w-full h-full object-cover rounded-xl sm:h-40px md:h-60px lg:h-70px"
                   src="./assets/download.jpg"
                   alt=""
                 />
               </div>
+
               <div
                 class="w-[100%] h-[70px] flex flex-row text-center justify-evenly items-center absolute left-0 bottom-[10px] bg-orange-200"
               >
