@@ -1,5 +1,6 @@
 // import functions
 import { getData } from './getData.js'
+import { showNotification } from './notifications.js'
 // importing elements
 const MainBottomLeftWrapper = document.getElementById(
   'Main-Bottom-Left-Wrapper'
@@ -8,6 +9,7 @@ const MainBottomLeftWrapper = document.getElementById(
 // fter click on seach button the function will be called
 export const getRecipes = (searchTerm) => {
   let seacrchTimer = 0
+  showNotification(3)
   //
   let seachInterval = setInterval(() => {
     seacrchTimer += 1

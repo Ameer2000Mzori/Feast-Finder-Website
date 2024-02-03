@@ -2,6 +2,7 @@
 import { recipiesData } from './saveRecipesLogic.js'
 import { loadingAnimation } from './loadingAnimations.js'
 import { thereIsNoRecipes } from './thereIsNoRecipes.js'
+import { showNotification } from './notifications.js'
 
 // import { showCard } from './showCard.js'
 
@@ -99,6 +100,7 @@ const getFavoRecipesAndSelecte = (card) => {
 
     console.log('foundRecipeIndex:', foundRecipeIndex)
     if (foundRecipeIndex !== -1) {
+      showNotification(0)
       recipiesData.splice(foundRecipeIndex, 1)
       localStorage.setItem('recipiesData', JSON.stringify(recipiesData))
       console.log('recipiesData:', recipiesData)

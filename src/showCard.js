@@ -1,6 +1,6 @@
 // importing
 import { saveRecipe, recipiesData } from './saveRecipesLogic.js'
-
+import { showNotification } from './notifications.js'
 // selecting elements
 const MainBottomRightWrapper = document.getElementById(
   'Main-Bottom-Right-Wrapper'
@@ -99,6 +99,7 @@ export let showCard = (card) => {
       selectedTitle = ''
       selectedImg = ''
     } else {
+      showNotification(2)
       console.log('this recipe is already in recipiesData')
       selectedTitle = ''
       selectedImg = ''

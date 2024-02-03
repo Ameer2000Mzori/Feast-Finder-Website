@@ -17,7 +17,11 @@
     />
     <link rel="stylesheet" href="output.css" />
   </head>
-  <body>
+  <body class="overflow-hidden">
+    <div
+      id="notifications"
+      class="absolute top-4 opacity-0 right-4 w-[250px] h-[40px] bg-black transition-all duration-1000 text-center item-center justify-center flex flex-col rounded-lg translate-x-[200%]"
+    ></div>
     <section
       id="main-Page"
       class="flex flex-col h-dvh w-dvw bg-orange-300 justify-center text-center items-center"
@@ -47,7 +51,7 @@
               id="search-Btn"
               class="w-[130px] h-[30px] bg-orange-300 hover:bg-orange-200 active:bg-orange-400 rounded-[1rem] text-white transition duration-100"
             >
-              <i class="fa-solid fa-magnifying-glass"></i> SEARCH
+              <i class="fa-solid fa-magnifying-glass"></i>
             </button>
             <div
               id="book-Marks-Box"
@@ -126,5 +130,6 @@
     <script type="module" src="showFavoRecipes.js"></script>
     <script type="module" src="showCard.js"></script>
     <script type="module" src="loadingAnimations.js"></script>
+    <script type="module" src="notifications.js"></script>
   </body>
 </html>
