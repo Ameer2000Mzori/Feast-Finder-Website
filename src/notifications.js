@@ -16,7 +16,7 @@ const notificationsArrData = [
   {
     id: 3,
     text: 'item is already in favorite list',
-    color: 'yellow',
+    color: 'white',
   },
   {
     id: 4,
@@ -30,7 +30,11 @@ export const showNotification = (stageNotification) => {
   notificationsEl.textContent = notificationsArrData[stageNotification].text
   notificationsEl.style.backgroundColor =
     notificationsArrData[stageNotification].color
-  notificationsEl.style.color = 'white'
+  if (notificationsArrData[stageNotification].color === 'white') {
+    notificationsEl.style.color = 'black'
+  } else {
+    notificationsEl.style.color = 'white'
+  }
   notificationsEl.style.opacity = '100'
   notificationsEl.style.transform = 'translateY(0%)'
 

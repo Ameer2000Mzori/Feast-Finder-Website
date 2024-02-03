@@ -9,7 +9,7 @@ const MainBottomLeftWrapper = document.getElementById(
 // fter click on seach button the function will be called
 export const getRecipes = (searchTerm) => {
   let seacrchTimer = 0
-  showNotification(2)
+  showNotification(3)
   //
   let seachInterval = setInterval(() => {
     seacrchTimer += 1

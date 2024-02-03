@@ -21,7 +21,6 @@ export const saveRecipe = (selectedTitle, selectedImg) => {
     recipiesData.push(newRecipe)
     localStorage.setItem('recipiesData', JSON.stringify(recipiesData))
   } else {
-    showNotification(2)
     console.log('this recipe is already in recipiesData')
   }
   console.log('recipiesData:', recipiesData)
