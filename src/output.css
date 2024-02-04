@@ -672,12 +672,12 @@ video {
   height: 100dvh;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-full {
   height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .w-\[100\%\] {
@@ -749,28 +749,13 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-y-\[-50\%\] {
-  --tw-translate-y: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-\[-500\%\] {
-  --tw-translate-x: -500%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-\[500\%\] {
-  --tw-translate-x: 500%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-\[100\%\] {
-  --tw-translate-x: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .translate-x-\[200\%\] {
   --tw-translate-x: 200%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-\[-50\%\] {
+  --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1070,6 +1055,10 @@ video {
   line-height: 2.25rem;
 }
 
+.text-\[0\.6rem\] {
+  font-size: 0.6rem;
+}
+
 .text-\[1\.6rem\] {
   font-size: 1.6rem;
 }
@@ -1086,10 +1075,6 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-\[0\.6rem\] {
-  font-size: 0.6rem;
 }
 
 .font-bold {
@@ -1211,14 +1196,14 @@ video {
   transition-duration: 150ms;
 }
 
-.transition-transform {
-  transition-property: transform;
+.transition-all {
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-.transition-all {
-  transition-property: all;
+.transition-transform {
+  transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1235,16 +1220,12 @@ video {
   transition-duration: 100ms;
 }
 
-.duration-300 {
-  transition-duration: 300ms;
-}
-
 .duration-1000 {
   transition-duration: 1000ms;
 }
 
-.hover\:block:hover {
-  display: block;
+.duration-300 {
+  transition-duration: 300ms;
 }
 
 .hover\:bg-orange-200:hover {
@@ -1255,15 +1236,6 @@ video {
 .hover\:bg-slate-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-red-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
-
-.hover\:opacity-100:hover {
-  opacity: 1;
 }
 
 .focus\:outline-orange-100:focus {
@@ -1294,24 +1266,16 @@ video {
     display: none;
   }
 
-  .sm\:h-\[40x\] {
-    height: 40x;
-  }
-
-  .sm\:h-\[40xp\] {
-    height: 40xp;
-  }
-
   .sm\:w-\[150px\] {
     width: 150px;
   }
 
-  .sm\:text-\[0\.9rem\] {
-    font-size: 0.9rem;
-  }
-
   .sm\:text-\[0\.6rem\] {
     font-size: 0.6rem;
+  }
+
+  .sm\:text-\[0\.9rem\] {
+    font-size: 0.9rem;
   }
 }
 
@@ -1324,51 +1288,21 @@ video {
     display: none;
   }
 
-  .md\:h-\[60px\] {
-    height: 60px;
+  .md\:text-\[0\.9rem\] {
+    font-size: 0.9rem;
   }
 
   .md\:text-\[1\.2rem\] {
     font-size: 1.2rem;
   }
-
-  .md\:text-\[1\.6rem\] {
-    font-size: 1.6rem;
-  }
-
-  .md\:text-\[1\.1rem\] {
-    font-size: 1.1rem;
-  }
-
-  .md\:text-\[1rem\] {
-    font-size: 1rem;
-  }
-
-  .md\:text-\[0\.9rem\] {
-    font-size: 0.9rem;
-  }
-
-  .md\:text-\[0\.9\] {
-    color: 0.9;
-  }
 }
 
 @media (min-width: 1024px) {
-  .lg\:h-\[70px\] {
-    height: 70px;
+  .lg\:text-\[1\.2rem\] {
+    font-size: 1.2rem;
   }
 
   .lg\:text-\[1\.6rem\] {
     font-size: 1.6rem;
-  }
-
-  .lg\:text-\[1\.2rem\] {
-    font-size: 1.2rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:text-\[1\.4rem\] {
-    font-size: 1.4rem;
   }
 }
